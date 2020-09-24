@@ -72,6 +72,7 @@ Coverage details will be automatically generated onto `coverage` folder when the
   - Son
   - Daughter
   - Siblings
+  - COMMAND_NOT_SUPPORTED (If the command is not any one of the above)
 - Added Integration tests only for happy path.
 - I had two train of thoughts for `Family::Tree::Cohort` generation attribute. Chose the first one to solve the problem as mental model of generation object as two people found to be more meaningful than a nested structure.
   - One approach is to represent generation attribute as array of couple (sub family)
