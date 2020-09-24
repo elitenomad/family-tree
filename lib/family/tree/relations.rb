@@ -93,7 +93,7 @@ module Family
       def find_spouse(person)
         cohort = traverse(person)
         raise Family::Tree::PersonNotFoundError if cohort.nil?
-
+        
         cohort&.
           generation&.
           find { |elem| elem&.name != person }
@@ -295,11 +295,13 @@ module Family
       #
       def find_brothers_in_law(person)
         spouse = find_spouse(person)
-        spouses_brothers = find_sibling_brothers(spouse&.name)
+        spouses_brothers = spouse.nil? ? [] : find_sibling_brothers(spouse&.name)
 
         siblings = find_sibling_sisters(person)
-        husbands_of_siblings = siblings.map { |sibling| find_spouse(sibling)&.name }
-
+        husbands_of_siblings = siblings.map do |sibling| 
+          find_spouse(sibling)&.name 
+        end.compact
+        
         spouses_brothers + husbands_of_siblings
       end
 
@@ -322,10 +324,12 @@ module Family
       #
       def find_sisters_in_law(person)
         spouse = find_spouse(person)
-        spouses_sisters = find_sibling_sisters(spouse&.name)
-
+        spouses_sisters = spouse.nil? ? [] : find_sibling_sisters(spouse&.name)
+        
         siblings = find_sibling_brothers(person)
-        wives_of_siblings = siblings.map { |sibling| find_spouse(sibling)&.name }.compact
+        wives_of_siblings = siblings.map do |sibling| 
+          find_spouse(sibling)&.name 
+        end.compact
 
         spouses_sisters + wives_of_siblings
       end

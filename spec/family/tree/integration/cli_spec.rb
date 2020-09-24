@@ -2,7 +2,7 @@ require "spec_helper"
 
 module Family
   module Tree
-    RSpec.describe CLI do
+    RSpec.describe 'Family::Tree::CLI Integration Spec' do
       subject { Family::Tree::CLI.new }
 
       context "Run commands from usecase-1.txt" do
