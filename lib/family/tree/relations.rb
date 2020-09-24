@@ -35,9 +35,8 @@ module Family
           parent: person.is_child ? person.name : find_spouse(mother)&.name,
         )
         cohort = Family::Tree::Cohort.new([new_child, nil])
-
         traverse(mother) { |c| c.children << cohort }
-        # pp tree
+        
         return Family::Tree::CHILD_ADDED_SUCCESS_MESSAGE
       end
 

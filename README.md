@@ -29,6 +29,12 @@ To experiment with that code, run `bin/console` for an interactive prompt.
 
   Note: Ensure ruby is installed on the system. Look into family.json for the structure of the input.
 
+## Test
+
+```
+  rspec spec/
+```
+
 ## Main files
 
 ├── data
