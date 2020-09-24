@@ -20,7 +20,7 @@ module Family
             loop = true
             return current unless block_given?
 
-            yield
+            yield(current)
           else
             children = current.children
             (children || []).each do |child|
@@ -36,9 +36,15 @@ module Family
         return "PERSON_NOT_FOUND" if person.nil?
         return "CHILD_ADDITION_FAILED" if person.male?
 
-        child = Family::Tree::Person.new(name: child, gender: gender, is_child: true)
-        cohort = Family::Tree::Cohort.new([p, nil])
-        parse(mother) { tree.children << cohort }
+        new_child = Family::Tree::Person.new(
+          name: child,
+          gender: gender, 
+          is_child: true, 
+          parent: person.is_child ? person.name : find_spouse(mother)&.name
+        )
+        cohort = Family::Tree::Cohort.new([new_child, nil])
+
+        parse(mother) { |c| c.children << cohort }
 
         return "CHILD_ADDED"
       end

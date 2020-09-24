@@ -1,2 +1,2 @@
 ADD_CHILD Generva John Male
-GET_RELATIONSHIP Bill Sons
+GET_RELATIONSHIP Bill Son

@@ -15,9 +15,9 @@ module Family
         relatives = case relation
           when "Children"
             @relations.find_children(person)
-          when "Sons"
+          when "Son"
             @relations.find_sons(person)
-          when "Daughters"
+          when "Daughter"
             @relations.find_daughters(person)
           when "Siblings"
             @relations.find_siblings(person)
@@ -35,7 +35,7 @@ module Family
             @relations.find_aunt(person)
           else
             []
-        end
+          end
 
         (relatives.empty? ? "NONE" : relatives.join(" "))
       end

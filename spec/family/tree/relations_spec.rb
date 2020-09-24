@@ -10,9 +10,9 @@ module Family
       let(:expected_bills_daughters) { ["Victoire", "Dominique"] }
       let(:expected_bills_parent) { "King Arthur" }
       let(:expected_bills_spouse) { "Flora" }
-      let(:expected_bills_siblings) { ["Charlie", "Percy", "Ronald", "Generva"] }
+      let(:expected_bills_siblings) { ["Charlie", "Percy", "Ronald", "Ginerva"] }
       let(:expected_bills_sibling_brothers) { ["Charlie", "Percy", "Ronald"] }
-      let(:expected_bills_sibling_sisters) { ["Generva"] }
+      let(:expected_bills_sibling_sisters) { ["Ginerva"] }
 
       let(:expected_remus_aunts) { ["Dominique"] }
       let(:expected_ginny_uncles) { ["James"] }
@@ -45,7 +45,7 @@ module Family
         describe "when mother is not found in the family tree" do
           it "is expected to return CHILD_ADDED" do
             expect(
-              subject.add_child("Generva", "John", "Male")
+              subject.add_child("Ginerva", "John", "Male")
             ).to eq("CHILD_ADDED")
           end
         end

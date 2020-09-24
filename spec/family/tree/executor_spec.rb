@@ -26,17 +26,17 @@ module Family
           end
         end
 
-        describe "Sons" do
+        describe "Son" do
           it "is expected to call relations find_sons method" do
             expect(relations).to receive(:find_sons).with("Generva").and_return([])
-            subject.get_relationship("Generva", "Sons")
+            subject.get_relationship("Generva", "Son")
           end
         end
 
-        describe "Daughters" do
+        describe "Daughter" do
           it "is expected to call relations find_daughters method" do
             expect(relations).to receive(:find_daughters).with("Generva").and_return([])
-            subject.get_relationship("Generva", "Daughters")
+            subject.get_relationship("Generva", "Daughter")
           end
         end
 

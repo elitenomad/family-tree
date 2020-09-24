@@ -11,7 +11,7 @@ module Family
           commands = subject.load(path)
           expected_commands = [
             [:add_child, "Generva", "John", "Male"],
-            [:get_relationship, "Bill", "Sons"],
+            [:get_relationship, "Bill", "Son"],
           ]
 
           expect(commands).to eq(expected_commands)
@@ -48,8 +48,8 @@ module Family
 
         context "get_relationship command" do
           it "passes get_relationship command to executor" do
-            expect(executor).to receive(:get_relationship).with("Bill", "Sons")
-            subject.run([[:get_relationship, "Bill", "Sons"]])
+            expect(executor).to receive(:get_relationship).with("Bill", "Son")
+            subject.run([[:get_relationship, "Bill", "Son"]])
           end
         end
       end
