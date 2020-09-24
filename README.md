@@ -70,6 +70,43 @@ To experiment with that code, run `bin/console` for an interactive prompt.
   - Daughter
   - Siblings
 - Added Integration tests only for happy path.
+- I had two train of thoughts for `Family::Tree::Cohort` generation attribute. Chose the first one to solve the problem.
+  - One approach is to represent generation attribute as array of couple (sub family)
+    ```
+      Array value represent `Family::Tree:Person` values
+
+      [
+        {
+          name: 'Bill',
+          gender: 'Male',
+          is_child: true,
+          parent: 'King Arthur'
+        },
+        {
+          name: 'Flora',
+          gender: 'Female',
+          is_child: false,
+          parent: nil
+        },
+      ]
+    ```
+  - Another approach is to represent generation attribute as an nested object of p1 and p2. 
+
+    ```
+      Object value represent `Family::Tree:Person` 
+        {
+          name: 'Bill',
+          gender: 'Male',
+          is_child: true,
+          parent: 'King Arthur'
+          spouse: {
+            name: 'Flora',
+            gender: 'Female',
+            is_child: false,
+            parent: nil
+          }
+        }
+    ```
 
 ## Development
 
