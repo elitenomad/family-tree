@@ -1,0 +1,5 @@
+ADD_CHILD 'Queen Margret' Pranava Male
+ADD_CHILD Bill Lagarthey Male
+GET_RELATIONSHIP 'Queen Margret' Son
+GET_RELATIONSHIP 'King Arthur' Daughter
+GET_RELATIONSHIP Pranava Siblings

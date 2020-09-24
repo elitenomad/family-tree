@@ -69,7 +69,7 @@ To experiment with that code, run `bin/console` for an interactive prompt.
   - Son
   - Daughter
   - Siblings
-
+- Added Integration tests only for happy path.
 
 ## Development
 
