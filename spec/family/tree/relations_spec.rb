@@ -28,7 +28,7 @@ module Family
       context "#add_child" do
         describe "when mother is not found in the family tree" do
           it "is expected to return PERSON_NOT_FOUND" do
-            expect{
+            expect {
               subject.add_child("Genervaxyz", "John", "Male")
             }.to raise_error(Family::Tree::PersonNotFoundError)
           end
@@ -36,7 +36,7 @@ module Family
 
         describe "when person passed is a Male" do
           it "is expected return CHILD_ADDITION_FAILED" do
-            expect{
+            expect {
               subject.add_child("Bill", "John", "Male")
             }.to raise_error(Family::Tree::ChildAdditionFailedError)
           end
@@ -107,10 +107,10 @@ module Family
         end
 
         describe "when person passed is nil" do
-          it "is expected return an empty list" do
-            expect(
+          it "is expected raise an error" do
+            expect {
               subject.find_spouse(nil)
-            ).to eq(nil)
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end
@@ -126,17 +126,17 @@ module Family
 
         describe "when person passed is not in the family tree" do
           it "is expected to return nil" do
-            expect(
+            expect {
               subject.find_person("Billsy")
-            ).to be_nil
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
 
         describe "when person passed is nil" do
           it "is expected return nil" do
-            expect(
+            expect {
               subject.find_person(nil)
-            ).to eq(nil)
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end
@@ -211,10 +211,10 @@ module Family
         end
 
         describe "when person passed is nil" do
-          it "is expected return an empty list" do
-            expect(
+          it "is expected raise an error" do
+            expect {
               subject.find_siblings(nil)
-            ).to eq([])
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end
@@ -237,10 +237,10 @@ module Family
         end
 
         describe "when person passed is nil" do
-          it "is expected return an empty list" do
-            expect(
+          it "is expected raise an error" do
+            expect {
               subject.find_sibling_brothers(nil)
-            ).to eq([])
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end
@@ -263,10 +263,10 @@ module Family
         end
 
         describe "when person passed is nil" do
-          it "is expected return an empty list" do
-            expect(
+          it "is expected return raise an error" do
+            expect {
               subject.find_sibling_sisters(nil)
-            ).to eq([])
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end
@@ -289,10 +289,10 @@ module Family
         end
 
         describe "when person passed is nil" do
-          it "is expected return an empty list" do
-            expect(
+          it "is expected to raise an error" do
+            expect {
               subject.find_uncle(nil)
-            ).to eq([])
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end
@@ -315,10 +315,10 @@ module Family
         end
 
         describe "when person passed is nil" do
-          it "is expected return an empty list" do
-            expect(
+          it "is expected to raise an error" do
+            expect {
               subject.find_aunt(nil)
-            ).to eq([])
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end
@@ -333,10 +333,10 @@ module Family
         end
 
         describe "when person passed is nil" do
-          it "is expected return an empty list" do
-            expect(
+          it "is expected to raise an error" do
+            expect {
               subject.find_brothers_in_law(nil)
-            ).to eq([])
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end
@@ -351,10 +351,10 @@ module Family
         end
 
         describe "when person passed is nil" do
-          it "is expected return an empty list" do
-            expect(
+          it "is expected to raise an error" do
+            expect {
               subject.find_sisters_in_law(nil)
-            ).to eq([])
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end

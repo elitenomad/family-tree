@@ -10,8 +10,9 @@ module Family
           path = File.dirname(__FILE__) + "/../../support/usecase-1.txt"
           commands = subject.load(path)
           expected_commands = [
-            [:add_child, "Generva", "John", "Male"],
-            [:get_relationship, "Bill", "Son"],
+            [:add_child, "Ginerva", "John", "Male"],
+            [:get_relationship, "Ginny", "Paternal-Uncle"],
+            [:get_relationship, "Darcy", "Brother-In-Law"]
           ]
 
           expect(commands).to eq(expected_commands)

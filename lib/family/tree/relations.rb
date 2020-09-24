@@ -73,6 +73,7 @@ module Family
       #
       def find_parent(person)
         cohort = traverse(person)
+        raise Family::Tree::PersonNotFoundError if cohort.nil?
 
         cohort&.
           generation&.
@@ -91,6 +92,7 @@ module Family
       #
       def find_spouse(person)
         cohort = traverse(person)
+        raise Family::Tree::PersonNotFoundError if cohort.nil?
 
         cohort&.
           generation&.
@@ -108,6 +110,7 @@ module Family
       #
       def find_person(person)
         cohort = traverse(person)
+        raise Family::Tree::PersonNotFoundError if cohort.nil?
 
         cohort&.
           generation&.

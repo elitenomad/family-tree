@@ -1,3 +1,5 @@
 ADD_CHILD Ginerva John Male
 GET_RELATIONSHIP Ginny Paternal-Uncle
 GET_RELATIONSHIP Darcy Brother-In-Law
+ADD_CHILD Luna Lola Female
+GET_RELATIONSHIP Luna Maternal-Uncle
