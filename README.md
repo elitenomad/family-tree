@@ -2,9 +2,9 @@
 
  In this directory, you'll find the files required to solve Family tree problem which was provided as a code challenge.
 
- ## Debug
+## Development
 
-To experiment with that code, run `bin/console` for an interactive prompt.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 ## Usage
 
@@ -54,11 +54,11 @@ To experiment with that code, run `bin/console` for an interactive prompt.
 
 ## Design decisions
 
-- As there was no mention of adding a other relationships (e.g. spouse, husband) in the program, i made a technical choice to create a family tree data structure filled with the information provided in the image (For image reference, please look into problem statement).
+- As there was no mention of adding a other relationships (e.g. spouse, husband) in the program, i made a technical choice to create a family tree data structure pre - filled with the data provided in the image (For image reference, please look into problem statement).
 - If the commands sent are invalid, they will be ignored
 - Cohorts generation attribute will have husband and wife detail. Assumption here is that they are always of opposite sex.
 - Child names must be Unique. As the search is based on a name will create problems if the names are not unique.
-- If the names are more than two words, they must be enclosed in single Quotes (Not Double quotes as code handles only single quotes). (e.g 'Queen Margret' )
+- If the names are more than two words, they must be enclosed in single Quotes (Double quotes are not handled). (e.g 'Queen Margret' not "Queen Margret" )
 - Relationship values are static and works only for below values
   - Paternal-Uncle
   - Maternal-Uncle
@@ -70,7 +70,7 @@ To experiment with that code, run `bin/console` for an interactive prompt.
   - Daughter
   - Siblings
 - Added Integration tests only for happy path.
-- I had two train of thoughts for `Family::Tree::Cohort` generation attribute. Chose the first one to solve the problem.
+- I had two train of thoughts for `Family::Tree::Cohort` generation attribute. Chose the first one to solve the problem as mental model of generation object as two people found to be more meaningful than a nested structure.
   - One approach is to represent generation attribute as array of couple (sub family)
     ```
       Array value represent `Family::Tree:Person` values
@@ -106,10 +106,6 @@ To experiment with that code, run `bin/console` for an interactive prompt.
           }
         }
     ```
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 ## License
 
