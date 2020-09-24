@@ -1,0 +1,130 @@
+{
+        "family": {
+            "name": "King Arthur",
+            "gender": "Male",
+            "spouse": "Queen Margret",
+            "children": [
+                {
+                    "name": "Bill",
+                    "gender": "Male",
+                    "spouse": "Flora",
+                    "children": [
+                        {
+                            "name": "Victoire",
+                            "gender": "Female",
+                            "spouse": "Ted",
+                            "children": [
+                                {
+                                    "name": "Remus",
+                                    "gender": "Male",
+                                    "spouse": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Dominique",
+                            "gender": "Female",
+                            "spouse": ""
+                        },
+                        {
+                            "name": "Louis",
+                            "gender": "Male",
+                            "spouse": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Charlie",
+                    "gender": "Male",
+                    "spouse": ""
+                },
+                {
+                    "name": "Percy",
+                    "gender": "Male",
+                    "spouse": "Audrey",
+                    "children": [
+                        {
+                            "name": "Molly",
+                            "gender": "Female",
+                            "spouse": ""
+                        },
+                        {
+                            "name": "Lucy",
+                            "gender": "Female",
+                            "spouse": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Ronald",
+                    "gender": "Male",
+                    "spouse": "Helen",
+                    "children": [
+                        {
+                            "name": "Hugo",
+                            "gender": "Male",
+                            "spouse": ""
+                        },
+                        {
+                            "name": "Rose",
+                            "gender": "Female",
+                            "spouse": "Malfoy",
+                            "children": [
+                                {
+                                    "name": "Draco",
+                                    "gender": "Male",
+                                    "spouse": ""
+                                },
+                                {
+                                    "name": "Aster",
+                                    "gender": "Female",
+                                    "spouse": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Generva",
+                    "gender": "Female",
+                    "spouse": "Harry",
+                    "children": [
+                        {
+                            "name": "James",
+                            "gender": "Male",
+                            "spouse": "Darcy",
+                            "children": [
+                                {
+                                    "name": "William",
+                                    "gender": "Male",
+                                    "spouse": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Albus",
+                            "gender": "Male",
+                            "spouse": "Alice",
+                            "children": [
+                                {
+                                    "name": "Ron",
+                                    "gender": "Male",
+                                    "spouse": ""
+                                },
+                                {
+                                    "name": "Ginny",
+                                    "gender": "Female",
+                                    "spouse": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Lily",
+                            "gender": "Female",
+                            "spouse": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    }

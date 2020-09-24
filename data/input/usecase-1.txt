@@ -1,0 +1,14 @@
+ADD_CHILD Generva John Male
+ADD_CHILD Shivani John Male
+GET_RELATIONSHIP Bill Sons
+GET_RELATIONSHIP Bill Daughters
+GET_RELATIONSHIP Generva Sons
+GET_RELATIONSHIP Victoire Siblings
+GET_RELATIONSHIP Ginny Paternal-Uncle
+GET_RELATIONSHIP Draco Maternal-Uncle
+GET_RELATIONSHIP Remus Maternal-Aunt
+GET_RELATIONSHIP Darcy Brother-In-Law
+GET_RELATIONSHIP Darcy Sister-In-Law
+GET_RELATIONSHIP Alice Sister-In-Law
+GET_RELATIONSHIP Lily Sister-In-Law
+GET_RELATIONSHIP Shivani Sister-In-Law
