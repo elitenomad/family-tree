@@ -88,6 +88,14 @@ module Family
             subject.get_relationship("Generva", "Maternal-Aunt")
           end
         end
+
+        describe "else" do
+          it "is expected to return COMMAND_NOT_SUPPORTED" do
+            expect(
+              subject.get_relationship("Generva", "NON_EXISTENT_COMMAND")
+            ).to eq('COMMAND_NOT_SUPPORTED')
+          end
+        end
       end
     end
   end

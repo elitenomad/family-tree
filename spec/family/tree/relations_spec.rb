@@ -28,17 +28,17 @@ module Family
       context "#add_child" do
         describe "when mother is not found in the family tree" do
           it "is expected to return PERSON_NOT_FOUND" do
-            expect(
+            expect{
               subject.add_child("Genervaxyz", "John", "Male")
-            ).to eq("PERSON_NOT_FOUND")
+            }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
 
         describe "when person passed is a Male" do
           it "is expected return CHILD_ADDITION_FAILED" do
-            expect(
+            expect{
               subject.add_child("Bill", "John", "Male")
-            ).to eq("CHILD_ADDITION_FAILED")
+            }.to raise_error(Family::Tree::ChildAdditionFailedError)
           end
         end
 
@@ -46,7 +46,7 @@ module Family
           it "is expected to return CHILD_ADDED" do
             expect(
               subject.add_child("Ginerva", "John", "Male")
-            ).to eq("CHILD_ADDED")
+            ).to eq(Family::Tree::CHILD_ADDED_SUCCESS_MESSAGE)
           end
         end
       end

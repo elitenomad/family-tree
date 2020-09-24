@@ -3,7 +3,6 @@ require "json"
 module Family
   module Tree
     class Builder
-      
       def run(path)
         parse(JSON.parse(File.read(path))["family"])
       end
@@ -18,7 +17,6 @@ module Family
 
         cohorts
       end
-
 
       private
 

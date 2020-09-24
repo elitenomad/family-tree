@@ -19,7 +19,12 @@ module Family
 
       def run(commands)
         commands.each do |command, *args|
-          puts executor.send(command, *args) unless command == :invalid
+          begin
+            puts executor.send(command, *args) unless command == :invalid
+          rescue => e
+            puts "#{e.message}"
+            next
+          end
         end
       end
     end

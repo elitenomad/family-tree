@@ -34,7 +34,7 @@ module Family
           when "Maternal-Aunt"
             @relations.find_aunt(person)
           else
-            []
+            ["COMMAND_NOT_SUPPORTED"]
           end
 
         (relatives.empty? ? "NONE" : relatives.join(" "))
