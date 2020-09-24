@@ -31,6 +31,9 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 ## Test
 
+`simplecov` gem helps to create test coverage information for all the files. 
+Coverage details will be automatically generated onto `coverage` folder when the below command is executed. 
+
 ```
   rspec spec/
 ```
