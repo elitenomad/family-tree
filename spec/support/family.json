@@ -1,0 +1,43 @@
+{
+    "family": {
+        "name": "King Arthur",
+        "gender": "Male",
+        "spouse": "Queen Margret",
+        "children": [
+            {
+                "name": "Bill",
+                "gender": "Male",
+                "spouse": "Flora",
+                "children": [
+                    {
+                        "name": "Victoire",
+                        "gender": "Female",
+                        "spouse": "Ted",
+                        "children": [
+                            {
+                                "name": "Remus",
+                                "gender": "Male",
+                                "spouse": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Dominique",
+                        "gender": "Female",
+                        "spouse": ""
+                    },
+                    {
+                        "name": "Louis",
+                        "gender": "Male",
+                        "spouse": ""
+                    }
+                ]
+            },
+            {
+                "name": "Charlie",
+                "gender": "Male",
+                "spouse": ""
+            }
+        ]
+    }
+}
