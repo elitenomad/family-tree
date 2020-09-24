@@ -91,7 +91,6 @@ To experiment with that code, run `bin/console` for an interactive prompt.
       ]
     ```
   - Another approach is to represent generation attribute as an nested object of p1 and p2. 
-
     ```
       Object value represent `Family::Tree:Person` 
         {
