@@ -62,29 +62,29 @@ module Family
         end
 
         describe "Paternal-Uncle" do
-          it "is expected to call relations find_uncle method" do
-            expect(relations).to receive(:find_uncle).with("Generva").and_return([])
+          it "is expected to call relations find_paternal_uncle method" do
+            expect(relations).to receive(:find_paternal_uncle).with("Generva").and_return([])
             subject.get_relationship("Generva", "Paternal-Uncle")
           end
         end
 
         describe "Paternal-Aunt" do
-          it "is expected to call relations find_aunt method" do
-            expect(relations).to receive(:find_aunt).with("Generva").and_return([])
+          it "is expected to call relations find_paternal_aunt method" do
+            expect(relations).to receive(:find_paternal_aunt).with("Generva").and_return([])
             subject.get_relationship("Generva", "Paternal-Aunt")
           end
         end
 
         describe "Maternal-Uncle" do
-          it "is expected to call relations find_uncle method" do
-            expect(relations).to receive(:find_uncle).with("Generva").and_return([])
+          it "is expected to call relations find_maternal_uncle method" do
+            expect(relations).to receive(:find_maternal_uncle).with("Generva").and_return([])
             subject.get_relationship("Generva", "Maternal-Uncle")
           end
         end
 
         describe "Maternal-Aunt" do
-          it "is expected to call relations find_aunt method" do
-            expect(relations).to receive(:find_aunt).with("Generva").and_return([])
+          it "is expected to call relations find_maternal_aunt method" do
+            expect(relations).to receive(:find_maternal_aunt).with("Generva").and_return([])
             subject.get_relationship("Generva", "Maternal-Aunt")
           end
         end

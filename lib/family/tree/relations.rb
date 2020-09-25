@@ -233,7 +233,7 @@ module Family
       end
 
       # Traverses family `tree` and returns
-      # person's uncles
+      # person's fathers brothers.
       #
       # == Parameters:
       # person:: string e.g Remus
@@ -244,18 +244,23 @@ module Family
       #
       # == Returns:
       # [] if input is nil or
-      # An array of person's Uncles
+      # An array of person's father brothers
       # e.g ['Bill','Charlie']
       #
-      def find_uncle(person)
+      def find_paternal_uncle(person)
         parent = find_parent(person)
+        parentObject = find_person(parent)
+
+        if parentObject.female?
+          parent = find_spouse(parent)&.name
+        end
 
         find_sibling_brothers(parent)
           .reject { |sibling| sibling == parent }
       end
 
       # Traverses family `tree` and returns
-      # person's aunts
+      # person's mothers brothers
       #
       # == Parameters:
       # person:: string e.g Remus
@@ -266,11 +271,70 @@ module Family
       #
       # == Returns:
       # [] if input is nil or
-      # An array of person's Aunts
+      # An array of person's Mothers brothers
+      # e.g ['Bill','Charlie']
+      #
+      def find_maternal_uncle(person)
+        parent = find_parent(person)
+        
+        parentObject = find_person(parent)
+        if parentObject.male?
+          parent = find_spouse(parent)&.name
+        end
+
+        find_sibling_brothers(parent)
+          .reject { |sibling| sibling == parent }
+      end
+
+      # Traverses family `tree` and returns
+      # person's mothers sistes
+      #
+      # == Parameters:
+      # person:: string e.g Remus
+      #
+      # == Raises:
+      # An error if person passed donot
+      # exist in family tree
+      #
+      # == Returns:
+      # [] if input is nil or
+      # An array of person's Mother sisters
       # e.g ['Ginerva','FLora']
       #
-      def find_aunt(person)
+      def find_maternal_aunt(person)
         parent = find_parent(person)
+
+        parentObject = find_person(parent)
+        if parentObject.male?
+          parent = find_spouse(parent)&.name
+        end
+
+        find_sibling_sisters(parent)
+          .reject { |sibling| sibling == parent }
+      end
+
+       # Traverses family `tree` and returns
+      # person's fathers sisters
+      #
+      # == Parameters:
+      # person:: string e.g Remus
+      #
+      # == Raises:
+      # An error if person passed donot
+      # exist in family tree
+      #
+      # == Returns:
+      # [] if input is nil or
+      # An array of person's Fathers sisters
+      # e.g ['Ginerva','FLora']
+      #
+      def find_paternal_aunt(person)
+        parent = find_parent(person)
+        
+        parentObject = find_person(parent)
+        if parentObject.female?
+          parent = find_spouse(parent)&.name
+        end
 
         find_sibling_sisters(parent)
           .reject { |sibling| sibling == parent }

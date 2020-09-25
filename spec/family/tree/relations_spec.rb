@@ -16,8 +16,11 @@ module Family
 
       let(:expected_remus_aunts) { ["Dominique"] }
       let(:expected_ginny_uncles) { ["James"] }
+      let(:expected_lily_maternal_uncles) { ["Bill", "Charlie", "Percy", "Ronald"]}
       let(:expected_darcy_sister_in_laws) { ["Lily"] }
       let(:expected_darcy_brother_in_laws) { ["Albus"] }
+      let(:expected_remus_maternal_aunts) { ['Dominique']}
+      let(:expected_victoire_paternal_aunts) { ['Ginerva'] }
 
       context "tree" do
         it "is expected not to be empty" do
@@ -271,11 +274,11 @@ module Family
         end
       end
 
-      context "#find_uncle" do
-        describe "when person passed has uncles" do
-          it "is expected return list uncle" do
+      context "#find_paternal_uncle" do
+        describe "when person has fathers brothers" do
+          it "is expected return list of uncles" do
             expect(
-              subject.find_uncle("Ginny")
+              subject.find_paternal_uncle("Ginny")
             ).to eql(expected_ginny_uncles)
           end
         end
@@ -283,7 +286,7 @@ module Family
         describe "when person passed has no uncle" do
           it "is expected return an empty list" do
             expect(
-              subject.find_uncle("Bill")
+              subject.find_paternal_uncle("Bill")
             ).to eq([])
           end
         end
@@ -291,25 +294,25 @@ module Family
         describe "when person passed is nil" do
           it "is expected to raise an error" do
             expect {
-              subject.find_uncle(nil)
+              subject.find_paternal_uncle(nil)
             }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end
       end
 
-      context "#find_aunt" do
-        describe "when person passed has aunts" do
-          it "is expected return list of aunts" do
+      context "#find_maternal_uncle" do
+        describe "when person passed has mothers brothers" do
+          it "is expected return list of uncles" do
             expect(
-              subject.find_aunt("Remus")
-            ).to eql(expected_remus_aunts)
+              subject.find_maternal_uncle("Lily")
+            ).to eql(expected_lily_maternal_uncles)
           end
         end
 
-        describe "when person passed has no aunts" do
+        describe "when person passed has no uncles" do
           it "is expected return an empty list" do
             expect(
-              subject.find_aunt("Bill")
+              subject.find_paternal_uncle("Bill")
             ).to eq([])
           end
         end
@@ -317,7 +320,43 @@ module Family
         describe "when person passed is nil" do
           it "is expected to raise an error" do
             expect {
-              subject.find_aunt(nil)
+              subject.find_paternal_uncle(nil)
+            }.to raise_error(Family::Tree::PersonNotFoundError)
+          end
+        end
+      end
+
+      context "#find_paternal_aunt" do
+        describe "when person passed has fathers sisters" do
+          it "is expected return list of uncles" do
+            expect(
+              subject.find_paternal_aunt("Victoire")
+            ).to eql(expected_victoire_paternal_aunts)
+          end
+        end
+
+        describe "when person passed is nil" do
+          it "is expected to raise an error" do
+            expect {
+              subject.find_paternal_aunt(nil)
+            }.to raise_error(Family::Tree::PersonNotFoundError)
+          end
+        end
+      end
+
+      context "#find_maternal_aunt" do
+        describe "when person passed has mothers sisters" do
+          it "is expected return list of uncles" do
+            expect(
+              subject.find_maternal_aunt("Remus")
+            ).to eql(expected_remus_maternal_aunts)
+          end
+        end
+
+        describe "when person passed is nil" do
+          it "is expected to raise an error" do
+            expect {
+              subject.find_maternal_aunt(nil)
             }.to raise_error(Family::Tree::PersonNotFoundError)
           end
         end

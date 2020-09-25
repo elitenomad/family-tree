@@ -62,6 +62,7 @@ Coverage details will be automatically generated onto `coverage` folder when the
 - Cohorts generation attribute will have husband and wife detail. Assumption here is that they are always of opposite sex.
 - Child names must be Unique. As the search is based on a name will create problems if the names are not unique.
 - If the names are more than two words, they must be enclosed in single Quotes (Double quotes are not handled). (e.g 'Queen Margret' not "Queen Margret" )
+- Always single space between the commands in the input files.
 - Relationship values are static and works only for below values
   - Paternal-Uncle
   - Maternal-Uncle

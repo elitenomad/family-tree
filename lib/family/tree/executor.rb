@@ -26,13 +26,13 @@ module Family
           when "Sister-In-Law"
             @relations.find_sisters_in_law(person)
           when "Paternal-Uncle"
-            @relations.find_uncle(person)
+            @relations.find_paternal_uncle(person)
           when "Paternal-Aunt"
-            @relations.find_aunt(person)
+            @relations.find_paternal_aunt(person)
           when "Maternal-Uncle"
-            @relations.find_uncle(person)
+            @relations.find_maternal_uncle(person)
           when "Maternal-Aunt"
-            @relations.find_aunt(person)
+            @relations.find_maternal_aunt(person)
           else
             ["COMMAND_NOT_SUPPORTED"]
           end
