@@ -1,6 +1,7 @@
 require "bundler/setup"
-require "family/tree"
 
+# Created this file as per instructions
+# https://github.com/geektrust/coding-problem-artefacts/tree/master/Ruby
 def simulate
     cli = Family::Tree::CLI.new
 
