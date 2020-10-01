@@ -40,6 +40,7 @@ Coverage details will be automatically generated onto `coverage` folder when the
 
 ## Main files
 
+```
 ├── data
 │   ├── family.json - Input data structure.
 │   └── input [Geektrust github inputs]([https://link](https://github.com/geektrust/coding-problem-artefacts/blob/master/sample-io/Family/BD-IO-PS1/))
@@ -55,6 +56,7 @@ Coverage details will be automatically generated onto `coverage` folder when the
 │       │   ├── **relations.rb** - Service class with all the methods to execute the commands. Added documentation to all the methods in class.
 │       └── **tree.rb** - Goal of this file is to require all the source code under `lib/` folder
 
+```
 ## Design decisions
 
 - As there was no mention of adding a other relationships (e.g. spouse, husband) in the program, i made a technical choice to create a family tree data structure pre - filled with the data provided in the image (For image reference, please look into problem statement).
