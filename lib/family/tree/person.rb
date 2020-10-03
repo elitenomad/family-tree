@@ -1,13 +1,14 @@
 module Family
   module Tree
     class Person
-      attr_reader :name, :gender, :parent, :is_child
+      attr_reader :name, :gender, :parent, :is_child, :level
 
-      def initialize(name:, gender:, is_child: false, parent: nil)
+      def initialize(name:, gender:, is_child: false, parent: nil, level: 0)
         @name = name
         @gender = gender
         @is_child = is_child
         @parent = parent
+        @level = level
       end
 
       def male?
@@ -16,6 +17,17 @@ module Family
 
       def female?
         gender == "Female"
+      end
+
+      # For testing Purposes when building person object
+      def to_h
+        {
+          name: name,
+          gender: gender,
+          parent: parent,
+          is_child: is_child,
+          level: level
+        }
       end
     end
   end

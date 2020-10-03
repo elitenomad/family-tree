@@ -38,6 +38,23 @@ module Family
                     end
                 end
             end
+
+            context 'FIND_OLDER' do
+                describe 'when format is valid' do
+                    it 'processes a command' do
+                        command, *args = Family::Tree::Command.parse("FIND_OLDER Bill Son")
+                        expect(command).to eq(:find_older)
+                        expect(args).to eq(["Bill", "Son"])
+                    end
+                end
+             
+                describe 'when format is invalid' do
+                    it "returns :invalid" do
+                        command = Family::Tree::Command.parse("FIND_OLDER Bill, Son")
+                        expect(command).to eq([:invalid, "FIND_OLDER Bill, Son"])
+                    end
+                end
+            end
         end
     end
 end

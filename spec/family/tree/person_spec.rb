@@ -13,6 +13,7 @@ module Family
       it { is_expected.to respond_to(:gender) }
       it { is_expected.to respond_to(:parent) }
       it { is_expected.to respond_to(:is_child) }
+      it { is_expected.to respond_to(:level)}
 
       describe "#male?" do
         context "when gender is Male" do
@@ -50,6 +51,7 @@ module Family
           it "is expected to be nil and false" do
             expect(subject.parent).to be_nil
             expect(subject.is_child).to be_falsey
+            expect(subject.level).to eq(0)
           end
         end
       end

@@ -7,6 +7,8 @@ module Family
           [:add_child, $~[:mother], $~[:child], $~[:gender]]
         when /\AGET_RELATIONSHIP ('?(?<name>[\w+\s]+)'?) (?<relationship>[\w-]+)\Z/
           [:get_relationship, $~[:name], $~[:relationship]]
+        when /\AFIND_OLDER ('?(?<member_1>[\w+\s]+)'?) ('?(?<member_2>[\w+\s]+)'?)\Z/
+          [:find_older, $~[:member_1], $~[:member_2]]
         else
           [:invalid, cmd]
         end

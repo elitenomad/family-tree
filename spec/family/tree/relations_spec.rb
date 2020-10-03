@@ -54,6 +54,36 @@ module Family
         end
       end
 
+      context "#find_older" do
+        describe "when Nevil and James are compared" do
+          it "is expected to return James" do
+            subject.add_child("Victoire", "Nevil", "Male")
+            expect(subject.find_older("Nevil", "James")).to eq("James")
+          end
+        end
+
+        describe "when Nevil and a non existant Person" do
+          it "is expected to return PERSON_NOT_FOUND" do
+            subject.add_child("Victoire", "Nevil", "Male")
+            expect {
+              subject.find_older("Nevil", "Pattinson")
+            }.to raise_error(Family::Tree::PersonNotFoundError)
+          end
+        end
+
+        describe "when Draco and Harry are compared" do
+          it "is expected to return Harry" do
+            expect(subject.find_older("Draco", "Harry")).to eq("Harry")
+          end
+        end
+
+        describe "when Bill and Charlie are compared" do
+          it "is expected to return SAME_GENERATION" do
+            expect(subject.find_older("Bill", "Charlie")).to eq("SAME_GENERATION")
+          end
+        end
+      end
+
       context "#find_children" do
         describe "when person passed has children" do
           it "is expected return list of children" do

@@ -21,12 +21,29 @@ module Family
         let(:expected_first_generation) { ['King Arthur', 'Queen Margret']}
         let(:expected_children_count) { 2 }
 
+        let(:second_generation) { result.children.first.generation }
+        let(:expected_child) { {:gender=>"Male", :is_child=>true, :level=>1, :name=>"Bill", :parent=>"King Arthur"} }
+        let(:expected_spouse) { {:gender=>"Female", :is_child=>false, :level=>1, :name=>"Flora", :parent=>nil}  }
+
         it "is expected to fill cohort's generation" do
             expect(result.generation.map(&:name)).to eq(expected_first_generation)
         end
 
         it "is expected to fill cohort's children" do
             expect(result.children.count).to eq(expected_children_count)
+        end
+
+        # Add extra tests to test the attribtues of the family tree
+        describe "child" do
+          it "is expected to fill cohort's immediate child with person attributes" do
+            expect(second_generation.first.to_h).to eq(expected_child)
+          end
+        end
+        
+        describe "Spouse" do
+          it "is expected to fill cohort's immediate child spouse with person attributes" do
+            expect(second_generation.last.to_h).to eq(expected_spouse)
+          end
         end
       end
     end
