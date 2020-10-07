@@ -22,8 +22,8 @@ module Family
         let(:expected_children_count) { 2 }
 
         let(:second_generation) { result.children.first.generation }
-        let(:expected_child) { {:gender=>"Male", :is_child=>true, :name=>"Bill", :parent=>"King Arthur"} }
-        let(:expected_spouse) { {:gender=>"Female", :is_child=>false, :name=>"Flora", :parent=>nil}  }
+        let(:expected_child) { {:gender=>"Male", :is_child=>true, :name=>"Bill", :parent=>"King Arthur", :level=>1} }
+        let(:expected_spouse) { {:gender=>"Female", :is_child=>false, :name=>"Flora", :parent=>nil, :level=>1}  }
 
         it "is expected to fill cohort's generation" do
             expect(result.generation.map(&:name)).to eq(expected_first_generation)

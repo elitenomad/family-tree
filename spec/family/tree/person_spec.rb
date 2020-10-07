@@ -13,6 +13,7 @@ module Family
       it { is_expected.to respond_to(:gender) }
       it { is_expected.to respond_to(:parent) }
       it { is_expected.to respond_to(:is_child) }
+      it { is_expected.to respond_to(:level)}
 
       describe "#male?" do
         context "when gender is Male" do

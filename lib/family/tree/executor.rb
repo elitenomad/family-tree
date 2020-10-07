@@ -11,6 +11,10 @@ module Family
         @relations.add_child(mother, child, gender)
       end
 
+      def find_older(member_1, member_2)
+        @relations.find_older(member_1, member_2)
+      end
+
       def get_relationship(person, relation)
         relatives = case relation
           when "Children"

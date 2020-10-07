@@ -33,11 +33,23 @@ module Family
           gender: gender,
           is_child: true,
           parent: person.is_child ? person.name : find_spouse(mother)&.name,
+          level: person.level + 1
         )
         cohort = Family::Tree::Cohort.new([new_child, nil])
         traverse(mother) { |c| c.children << cohort }
         
         return Family::Tree::CHILD_ADDED_SUCCESS_MESSAGE
+      end
+
+      def find_older(member_1, member_2)
+        p_1 = find_person(member_1)
+        p_2 = find_person(member_2)
+
+        if p_1.level == p_2.level
+          return "SAME_GENERATION"
+        end
+
+        p_1.level < p_2.level ? p_1.name : p_2.name
       end
 
       # Traverses family `tree` and returns

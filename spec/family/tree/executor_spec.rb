@@ -18,6 +18,13 @@ module Family
         end
       end
 
+      context "#find_older" do
+        it "is expected to call relations find_older method" do
+          expect(relations).to receive(:find_older).with("Generva", "John")
+          subject.find_older("Generva", "John")
+        end
+      end
+
       context "#get_relationship" do
         describe "Children" do
           it "is expected to call relations find_children method" do

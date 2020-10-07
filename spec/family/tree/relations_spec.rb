@@ -54,6 +54,28 @@ module Family
         end
       end
 
+      context "#find_older" do
+        describe "when given names of same generation" do
+          it "is expected to return SAME_GENERATION" do
+            expect(subject.find_older("Bill", "Charlie")).to eq('SAME_GENERATION')
+          end
+        end
+
+        describe "when given names are not found in family tree" do
+          it "is expected to raise a PersonNotFoundError" do
+            expect {
+              subject.find_older("Genervaxyz", "John")
+            }.to raise_error(Family::Tree::PersonNotFoundError)
+          end
+        end
+
+        describe "when given names are from 2 generations" do
+          it "is expected return older generation person name" do
+            expect(subject.find_older("Bill", "Remus")).to eq('Bill')
+          end
+        end
+      end
+
       context "#find_children" do
         describe "when person passed has children" do
           it "is expected return list of children" do

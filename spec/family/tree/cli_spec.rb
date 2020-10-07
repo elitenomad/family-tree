@@ -53,6 +53,13 @@ module Family
             subject.run([[:get_relationship, "Bill", "Son"]])
           end
         end
+
+        context "find_older command" do
+          it "passes find_older command to executor" do
+            expect(executor).to receive(:find_older).with("Bill", "Charlie")
+            subject.run([[:find_older, "Bill", "Charlie"]])
+          end
+        end
       end
     end
   end
