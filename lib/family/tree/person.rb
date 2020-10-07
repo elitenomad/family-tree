@@ -17,6 +17,16 @@ module Family
       def female?
         gender == "Female"
       end
+
+      # Testing purposes when building cohorts object
+      def to_h
+        {
+          name: name,
+          gender: gender,
+          parent: parent,
+          is_child: is_child
+        }
+      end
     end
   end
 end
