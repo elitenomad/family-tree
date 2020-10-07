@@ -113,6 +113,34 @@ Coverage details will be automatically generated onto `coverage` folder when the
           }
         }
     ```
+### Extension Problem (Generation GAP)
+
+Statement:
+
+Assuming each layer belongs to one generation. Given two names from different generation , return the name of a person who belongs to older 
+generation. If two people presented belong to same layer , we return a text called "SAME_GENERATION"
+
+Error:
+If either of the person who were given as inputs are not present, Raise a PersonNotFound error (To keep things simple).
+
+Solution:
+
+a) Add a usercase-4.txt file with the output.(Based on the PDF test cases)
+b) Update cli spec to test the new command in the input file. CLI file itself needs no change.
+c) Update Command Parser to have case statement for FIND_OLDER method in the input file.
+d) Update Executor file to have the method delegated to the Relations class.
+e) Update Person file to add new attribute called level
+f) Update Builder class to add level to each layer. Add spec.
+  1. Might require attributes check as well
+e) Update Relations Class to add a new method find_older with two names
+  1. Find person for two people
+  2. Raise error if either one of them donot exists
+  3. Check for the level of each person
+  4. If equal return 'SAME_GENERATION'
+  5. if not return the older generation person name
+f) Add an integration spec for the usecase-4.txt
+g) Validate all the specs are passing
+h) Test two or three scenarios and repeat e) untill all the specs pass.
 
 ## License
 
